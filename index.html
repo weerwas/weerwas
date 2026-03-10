@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team Review & Daily Report</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="page-header">
+      <h1>Team Review & Daily Report</h1>
+      <p>ใช้งานในองค์กรและสำหรับลูกค้า โดยกรอกข้อมูลอย่างเดียวก็ส่งรายงานได้</p>
+    </header>
+
+    <main class="layout">
+      <section class="card">
+        <h2>Submit Daily Report</h2>
+        <form id="daily-report-form" class="form-grid">
+          <label>
+            วันที่
+            <input type="date" id="report-date" required />
+          </label>
+          <label>
+            ผู้รายงาน
+            <input type="text" id="reporter" placeholder="ชื่อผู้รายงาน" required />
+          </label>
+          <label>
+            โครงการ/ลูกค้า
+            <input type="text" id="project" placeholder="เช่น Customer A" required />
+          </label>
+          <label>
+            งานที่ทำวันนี้
+            <textarea id="today-work" rows="3" required></textarea>
+          </label>
+          <label>
+            ปัญหา/Blocker
+            <textarea id="blockers" rows="2" placeholder="ถ้าไม่มีให้พิมพ์ -"></textarea>
+          </label>
+          <label>
+            แผนพรุ่งนี้
+            <textarea id="tomorrow-plan" rows="2" required></textarea>
+          </label>
+
+          <button type="submit">บันทึกรายงาน</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>Create Review</h2>
+        <form id="review-form" class="form-grid">
+          <label>
+            วันที่ Review
+            <input type="date" id="review-date" required />
+          </label>
+          <label>
+            ผู้รีวิว
+            <input type="text" id="reviewer" placeholder="ชื่อผู้รีวิว" required />
+          </label>
+          <label>
+            ผู้ถูกรีวิว (ทีม/ลูกค้า)
+            <input type="text" id="review-target" required />
+          </label>
+          <label>
+            คะแนน (1-5)
+            <input type="number" id="score" min="1" max="5" required />
+          </label>
+          <label>
+            ข้อเสนอแนะ
+            <textarea id="feedback" rows="3" required></textarea>
+          </label>
+
+          <button type="submit">บันทึก Review</button>
+        </form>
+      </section>
+
+      <section class="card full-width">
+        <div class="card-header">
+          <h2>Saved Data</h2>
+          <button id="clear-data" class="danger">ล้างข้อมูลทั้งหมด</button>
+        </div>
+        <div class="tables">
+          <div>
+            <h3>Daily Reports</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>วันที่</th>
+                  <th>ผู้รายงาน</th>
+                  <th>โครงการ</th>
+                  <th>สรุปงาน</th>
+                </tr>
+              </thead>
+              <tbody id="daily-report-list"></tbody>
+            </table>
+          </div>
+          <div>
+            <h3>Reviews</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>วันที่</th>
+                  <th>ผู้รีวิว</th>
+                  <th>เป้าหมาย</th>
+                  <th>คะแนน</th>
+                </tr>
+              </thead>
+              <tbody id="review-list"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <template id="row-template">
+      <tr></tr>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>

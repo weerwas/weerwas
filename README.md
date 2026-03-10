@@ -1,12 +1,58 @@
-- 👋 Hi, I’m @weerwas
-- 👀 I’m interested in Data Analytics and ML.
-- 🌱 I’m currently learning Swift and Apple Intelligence model.
-- 💞️ I’m looking to collaborate on IOS application.
-- 📫 How to reach me to robust design and friendly.
-- 😄 Pronouns: 
-- ⚡ Fun fact: 
+# Team Review & Daily Report Web App
 
-<!---
-weerwas/weerwas is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+Web App ตัวอย่างสำหรับใช้ในองค์กรและกับลูกค้า เพื่อ **Submit Daily Report** และ **ทำ Review** โดยผู้ใช้เพียงกรอกข้อมูลแล้วกดบันทึก
+
+## Features
+- ฟอร์ม `Daily Report` สำหรับรายงานงานประจำวัน
+- ฟอร์ม `Review` สำหรับให้คะแนนและข้อเสนอแนะ
+- ตารางแสดงข้อมูลที่บันทึกล่าสุด
+- เก็บข้อมูลใน `localStorage` (เหมาะกับ MVP / Demo)
+- ปุ่มล้างข้อมูลทั้งหมด
+
+## วิธีรัน (แนะนำ)
+> ต้องมี `python3` ในเครื่อง
+
+1) เข้าโฟลเดอร์โปรเจกต์
+```bash
+cd /workspace/weerwas
+```
+
+2) รันสคริปต์
+```bash
+./run.sh
+```
+
+3) เปิดเว็บ
+- `http://localhost:8000`
+
+### เปลี่ยนพอร์ต
+```bash
+./run.sh 9000
+```
+แล้วเปิด `http://localhost:9000`
+
+## วิธีรัน (สำรอง)
+ถ้าไม่ใช้สคริปต์ สามารถรันตรงได้:
+```bash
+python3 -m http.server 8000
+```
+
+## Troubleshooting
+- ถ้าเจอ `Permission denied` ตอนรัน `./run.sh`
+  ```bash
+  chmod +x run.sh
+  ./run.sh
+  ```
+- ถ้าเครื่องไม่มี `python3`
+  - ติดตั้ง Python 3 ก่อน แล้วรันใหม่
+- ถ้าพอร์ต 8000 ถูกใช้งานอยู่
+  ```bash
+  ./run.sh 9000
+  ```
+
+## Next steps for SaaS (production)
+- เพิ่มระบบ Login / Role (Admin, Manager, Client)
+- ต่อฐานข้อมูลจริง (PostgreSQL, MySQL, etc.)
+- API Backend สำหรับจัดการ reports/reviews
+- Export รายงานเป็น Excel/PDF
+- Notification (Email / LINE / Slack)
